@@ -1,1 +1,1 @@
-web: gunicorn plot_rsr:server
+web: gunicorn app:server

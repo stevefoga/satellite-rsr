@@ -80,7 +80,16 @@ arch -x86_64 brew install heroku/brew/heroku
 ```
 2) Follow Heroku's "Getting Started With Python" guide.
 3) Setup [Procfile](Procfile) and add `plot_rsr`.
-4) 
+4) Specify buildpack for Python. Run: 
+```
+heroku buildpacks:set heroku/python
+```
+5) Add Heroku repo as a remote (if not done so already, check with `git remote -v`): 
+```
+git remote add heroku https://git.heroku.com/satellite-rsr.git
+```
+6) Push to Heroku repo with `git push heroku main`
+7) 
 
 ### Licensing
 See [LICENSE.md](LICENSE.md).
