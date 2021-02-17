@@ -16,17 +16,23 @@ to:
 Requires two non-standard Python libraries:
 - dash
 - pandas
+- gunicorn (only required if deploying)
 
 which will install other dependencies as needed.
 
 Install using a `conda` one-liner: 
 ```
-conda create --name dash python=3.8 dash pandas
+conda create --name dash python=3.8 dash pandas gunicorn
 ```
 The exact configuration used in development is provided in the `environment.yml` file, which can be loaded using: 
 ```
 conda env create -f environment.yml
 ```
+
+## Usage
+### [plot_rsr.py](./plot_rsr.py)
+- Script generates the full interface, and calls a local server, which will output its URL in the console. There are 
+  some variables hard-coded at the top of the script, but it can be run as-is.
 
 ## Input data formats
 ## Satellite RSRs
@@ -53,7 +59,6 @@ conda env create -f environment.yml
 ## Data Sources
 ### Satellite sensors
 - Terra (MODIS): https://mcst.gsfc.nasa.gov/calibration/parameters
-
 - Landsat: https://landsat.usgs.gov/spectral-characteristics-viewer
 
 ### Ground spectral features
@@ -66,6 +71,16 @@ conda env create -f environment.yml
 ```
 conda env export > environment.yml
 ```
+
+### Deploy to Heroku
+Follow the [Plotly Deployment Guide](https://dash.plotly.com/deployment). Notes:
+1) Initial setup on macos (Apple Silicon, requires `homebrew` and `xcode-select`):
+```
+arch -x86_64 brew install heroku/brew/heroku
+```
+2) Follow Heroku's "Getting Started With Python" guide.
+3) Setup [Procfile](Procfile) and add `plot_rsr`.
+4) 
 
 ### Licensing
 See [LICENSE.md](LICENSE.md).

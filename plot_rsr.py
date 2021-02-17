@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import base64
+#import time
 
 import dash
 import dash_core_components as dcc
@@ -9,6 +10,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.express as px
 import plotly.graph_objects as go
+#import plotly.io as pio
 import pandas as pd
 
 
@@ -17,11 +19,14 @@ REPO_URL = "https://github.com/stevefoga/satellite-rsr"
 REPO_IMG = "assets/GitHub-Mark-32px.png"
 SATELLITE_SPECTRA = "data/rsr_ALL.csv"
 ENVIRONMENT_SPECTRA = "data/env_spectra_ALL.csv"
+#HTML_FILE_OUT = "html_out/html_out_{}.html".format(time.strftime("%Y%m%d-%H%M%S"))
 
 # example modified from https://dash.plotly.com/interactive-graphing
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+server = app.server
 
 styles = {
     'pre': {
@@ -146,6 +151,10 @@ app.layout = html.Div([
         ], className='three columns')
     ])
 ])
+
+# write out HTML file
+#pio.write_html(fig, file=HTML_FILE_OUT, auto_open=True)
+#print("HTML file written to {}".format(HTML_FILE_OUT))
 
 # basic hover tool
 @app.callback(
