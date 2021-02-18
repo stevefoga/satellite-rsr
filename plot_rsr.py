@@ -20,6 +20,8 @@ REPO_IMG = "assets/GitHub-Mark-32px.png"
 SATELLITE_SPECTRA = "data/rsr_ALL.csv"
 ENVIRONMENT_SPECTRA = "data/env_spectra_ALL.csv"
 #HTML_FILE_OUT = "html_out/html_out_{}.html".format(time.strftime("%Y%m%d-%H%M%S"))
+X_AXIS_LABEL = "Wavelength (\u03bcm)"
+Y_AXIS_LABEL = "Relative Spectral Response (W)"
 
 # example modified from https://dash.plotly.com/interactive-graphing
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -53,8 +55,8 @@ unique_sensors = pd.unique(df[sensor_column])
 
 # initial plot
 fig = px.line(df, x="wavelength_um", y="rsr_watts", color="band",
-              labels={"wavelength_um": "Wavelength (\u03bcm)",
-                      "rsr_watts": "Relative Spectral Response (W)"
+              labels={"wavelength_um": X_AXIS_LABEL,
+                      "rsr_watts": Y_AXIS_LABEL
                       }
               )
 
@@ -238,6 +240,19 @@ def update_line_chart(unique_sensors, color_type):
                                      y=df_ct["rsr_watts"],
                                      name=ct)
                           )
+
+        # add labels to final figure
+        fig.update_layout(
+            #title="Plot Title",
+            xaxis_title=X_AXIS_LABEL,
+            yaxis_title=Y_AXIS_LABEL,
+            #legend_title="",
+            #font=dict(
+            #    family="Courier New, monospace",
+            #    size=18,
+            #    color="RebeccaPurple"
+            #)
+        )
 
     return fig
 
