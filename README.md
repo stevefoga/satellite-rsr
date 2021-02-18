@@ -49,7 +49,7 @@ conda create --name dash python=3.8 dash pandas gunicorn
 - Configure Heroku to deploy from this repo's `main` branch (instead of Heroku git).
 - Add more sensors
   - Aqua, ASTER, EO-1 ALI (MODIS): https://mcst.gsfc.nasa.gov/calibration/parameters
-  - Sentinel: https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-2-msi/document-library/-/asset_publisher/Wk0TKajiISaR/content/sentinel-2a-spectral-responses
+  - Sentinel 2b: https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-2-msi/document-library/-/asset_publisher/Wk0TKajiISaR/content/sentinel-2a-spectral-responses
   - VIIRS (Suomi NPP): https://ncc.nesdis.noaa.gov/VIIRS/VIIRSSpectralResponseFunctions.php
   - Commercial?
 - Add more environmental spectra
@@ -61,8 +61,9 @@ conda create --name dash python=3.8 dash pandas gunicorn
 
 ## Data Sources
 ### Satellite sensors
-- Terra (MODIS): https://mcst.gsfc.nasa.gov/calibration/parameters
-- Landsat: https://landsat.usgs.gov/spectral-characteristics-viewer
+- Terra MODIS: https://mcst.gsfc.nasa.gov/calibration/parameters
+- Landsat 8 OLI/TIRS: https://landsat.usgs.gov/spectral-characteristics-viewer
+- Sentinel 2a: Sentinel 2b: https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-2-msi/document-library/-/asset_publisher/Wk0TKajiISaR/content/sentinel-2a-spectral-responses
 
 ### Ground spectral features
 - Landing page: https://crustal.usgs.gov/speclab/QueryAll07a.php
