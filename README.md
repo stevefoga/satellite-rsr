@@ -57,7 +57,7 @@ conda create --name dash python=3.8 dash pandas gunicorn
   - Water
   - Snow
   - Cloud/shadow
-- Lookup table to prettify display text (e.g, `l8_oli` --> `L8 OLI`)
+- Lookup table to prettify display text (e.g., `l8_oli` --> `L8 OLI`)
 
 ## Data Sources
 ### Satellite sensors
@@ -89,9 +89,8 @@ arch -x86_64 brew install heroku/brew/heroku
 ```
 pip list --format=freeze > requirements.txt
 ```
-   - The build failed on `mkl*` dependencies, the solution was to remove all of them.
-   - The build also failed on `setuptools=x.xx`, the solution was to remove the version requirement for `setuptools`.
-5) Setup [runtime.txt](runtime.txt). 
+   - The build failed on `mkl*` dependencies, the solution was to remove them completely.
+   - The build also failed on `setuptools=x.xx`, the solution was to remove the version requirement. 
 6) Push to Heroku repo with `git push heroku main` 
     - If working from a local branch that is not `main`, use `git push heroku mybranch:main`
 
