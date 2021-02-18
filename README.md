@@ -27,7 +27,8 @@ Install using a `conda` one-liner:
 ```
 conda create --name dash python=3.8 dash pandas gunicorn
 ```
-The exact configuration used in development is provided in the `environment.yml` file, which can be loaded using: 
+The exact configuration used in development is provided in the [environment.yml](environment.yml) file, which can be 
+loaded using: 
 ```
 conda env create -f environment.yml
 ```
