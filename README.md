@@ -12,6 +12,9 @@ to:
 2) make it easy for a user/developer to add or remove spectra, and
 3) allow for creation of publication-grade figures within the web UI.
 
+## Demo
+This is currently deployed in Heroku: https://satellite-rsr.herokuapp.com/. 
+
 ## Python environment
 Requires two non-standard Python libraries:
 - dash
@@ -44,6 +47,7 @@ conda env create -f environment.yml
 - Header: `wavelength_um,rsr_watts,spectra_type`
 
 ## TODOs
+- Configure Heroku to deploy from this repo's `main` branch (instead of Heroku git).
 - Add more sensors
   - Aqua, ASTER, EO-1 ALI (MODIS): https://mcst.gsfc.nasa.gov/calibration/parameters
   - Sentinel: https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-2-msi/document-library/-/asset_publisher/Wk0TKajiISaR/content/sentinel-2a-spectral-responses
@@ -78,23 +82,19 @@ Follow the [Plotly Deployment Guide](https://dash.plotly.com/deployment). Notes:
 ```
 arch -x86_64 brew install heroku/brew/heroku
 ```
-2) Follow Heroku's "Getting Started With Python" guide.
-3) Setup [Procfile](Procfile) and add `plot_rsr`.
+2) To setup the Heroku CLI, follow Heroku's [Getting Started With Python](https://devcenter.heroku.com/articles/getting-started-with-python#set-up) 
+   guide.
+3) Setup [Procfile](Procfile) and add `plot_rsr` script.
 4) Setup [requirements.txt](requirements.txt) using `pip` (there's a bug in pip that produces local paths for some 
    libs, so use `list --format=freeze` arguments to get around it):
 ```
 pip list --format=freeze > requirements.txt
 ```
-4) Specify buildpack for Python. Run: 
-```
-heroku buildpacks:set heroku/python
-```
-5) Add Heroku repo as a remote (if not done so already, check with `git remote -v`): 
-```
-git remote add heroku https://git.heroku.com/satellite-rsr.git
-```
-6) Push to Heroku repo with `git push heroku main`
-7) 
+   - The build failed on `mkl*` dependencies, the solution was to remove all of them.
+   - The build also failed on `setuptools=x.xx`, the solution was to remove the version requirement for `setuptools`.
+5) Setup [runtime.txt](runtime.txt). 
+6) Push to Heroku repo with `git push heroku main` 
+    - If working from a local branch that is not `main`, use `git push heroku mybranch:main`
 
 ### Licensing
 See [LICENSE.md](LICENSE.md).
