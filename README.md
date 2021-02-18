@@ -1,7 +1,6 @@
 # satellite-rsr
 ## Purpose
-Interactively examine relative spectral response (RSR) curves relative to other spaceborne spectral bands, relative 
-to ground target reflectances. 
+Interactively examine relative spectral response (RSR) curves of spaceborne instruments and ground target reflectances. 
 
 ## Methodology
 This work is largely based around improving the exiting (and functional) 
@@ -10,27 +9,26 @@ principles are reimplemented using the [Plotly (Dash) library](https://plotly.co
 to: 
 1) make the plotting framework open-source,
 2) make it easy for a user/developer to add or remove spectra, and
-3) allow for creation of publication-grade figures within the web UI.
+3) allow for creation of publication-grade figures using a web UI.
 
 ## Demo
 This is currently deployed in Heroku: https://satellite-rsr.herokuapp.com/. 
 
 ## Python environment
-Requires two non-standard Python libraries:
+Requires the following non-standard Python libraries:
 - dash
 - pandas
-- gunicorn (only required if deploying)
+- gunicorn *(only required if deploying)*
 
-which will install other dependencies as needed.
+**For `pip`**: use the [reqirements.txt](requirements.txt) file.
 
-Install using a `conda` one-liner: 
-```
-conda create --name dash python=3.8 dash pandas gunicorn
-```
-The exact configuration used in development is provided in the [environment.yml](environment.yml) file, which can be 
-loaded using: 
+**For `conda`**: use the [environment.yml](environment.yml) file: 
 ```
 conda env create -f environment.yml
+```
+or create using a single command:
+```
+conda create --name dash python=3.8 dash pandas gunicorn
 ```
 
 ## Usage
@@ -39,11 +37,11 @@ conda env create -f environment.yml
   some variables hard-coded at the top of the script, but it can be run as-is.
 
 ## Input data formats
-## Satellite RSRs
+### Satellite RSRs
 - Stored in file [rsr_ALL.csv](./data/rsr_ALL.csv)
 - Header: `wavelength_um,rsr_watts,sensor,band`
 
-## Environmental RSRs
+### Environmental RSRs
 - Stored in file [env_spectra_ALL.csv](./data/env_spectra_ALL.csv)
 - Header: `wavelength_um,rsr_watts,spectra_type`
 
