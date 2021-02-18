@@ -80,6 +80,11 @@ arch -x86_64 brew install heroku/brew/heroku
 ```
 2) Follow Heroku's "Getting Started With Python" guide.
 3) Setup [Procfile](Procfile) and add `plot_rsr`.
+4) Setup [requirements.txt](requirements.txt) using `pip` (there's a bug in pip that produces local paths for some 
+   libs, so use `list --format=freeze` arguments to get around it):
+```
+pip list --format=freeze > requirements.txt
+```
 4) Specify buildpack for Python. Run: 
 ```
 heroku buildpacks:set heroku/python
