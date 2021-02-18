@@ -46,7 +46,6 @@ conda create --name dash python=3.8 dash pandas gunicorn
 - Header: `wavelength_um,rsr_watts,spectra_type`
 
 ## TODOs
-- Configure Heroku to deploy from this repo's `main` branch (instead of Heroku git).
 - Add more sensors
   - Aqua, ASTER, EO-1 ALI (MODIS): https://mcst.gsfc.nasa.gov/calibration/parameters
   - Sentinel 2b: https://sentinels.copernicus.eu/web/sentinel/user-guides/sentinel-2-msi/document-library/-/asset_publisher/Wk0TKajiISaR/content/sentinel-2a-spectral-responses
@@ -94,6 +93,14 @@ pip list --format=freeze > requirements.txt
    - The build also failed on `setuptools=x.xx`, the solution was to remove the version requirement. 
 6) Push to Heroku repo with `git push heroku main` 
     - If working from a local branch that is not `main`, use `git push heroku mybranch:main`
+
+### Deploy from Github repo to Heroku
+- Purpose: Heroku will update deployment every time a commit is made to the target branch.
+- Should ideally do this after the `Deploy to Heroku` workflow is tested and verified.
+- Enable Github deployment 
+    - dashboard.heroku.com -> "Deploy" -> "Deployment method" -> "Github"
+- Enable automatic deployment
+    - dashboard.heroku.com -> "Deploy" -> "App connected to Github" -> Enable automatic deploys from desired branch.
 
 ### Licensing
 See [LICENSE.md](LICENSE.md).
