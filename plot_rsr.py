@@ -1,8 +1,6 @@
 import os
-import sys
 import json
 import base64
-#import time
 
 import dash
 import dash_core_components as dcc
