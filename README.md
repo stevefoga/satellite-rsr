@@ -26,9 +26,10 @@ Requires the following non-standard Python libraries:
 ```
 conda env create -f environment.yml
 ```
-or create using a single command:
+or create using the command line (recommended):
 ```
-conda create --name dash python=3.9.15 dash pandas gunicorn
+conda create --name dash python=3.9.15 
+conda install -c conda-forge numpy pandas dash
 ```
 
 ## Usage
@@ -92,6 +93,7 @@ arch -x86_64 brew install heroku/brew/heroku
 pip list --format=freeze > requirements.txt
 ```
    - The build failed on `mkl*` dependencies, the solution was to remove them completely.
+   - `mkl*` can be avoided completely if `numpy` is installed from `conda-forge`. 
    - The build also failed on `setuptools=x.xx`, the solution was to remove the version requirement. 
 5) Setup [runtime.txt](runtime.txt) to define the deployed Python version. Notes:
    - Must be compatible with [Heroku stack version](https://devcenter.heroku.com/articles/python-support#supported-runtimes). 
