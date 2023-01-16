@@ -20,7 +20,7 @@ Requires the following non-standard Python libraries:
 - pandas
 - gunicorn *(only required if deploying)*
 
-**For `pip`**: use the [reqirements.txt](requirements.txt) file.
+**For `pip`**: use the [requirements.txt](requirements.txt) file.
 
 **For `conda`**: use the [environment.yml](environment.yml) file: 
 ```
@@ -28,7 +28,7 @@ conda env create -f environment.yml
 ```
 or create using a single command:
 ```
-conda create --name dash python=3.8 dash pandas gunicorn
+conda create --name dash python=3.9.15 dash pandas gunicorn
 ```
 
 ## Usage
@@ -57,6 +57,8 @@ conda create --name dash python=3.8 dash pandas gunicorn
   - Snow
   - Cloud/shadow
 - Lookup table to prettify display text (e.g., `l8_oli` --> `L8 OLI`)
+- Clean up spectra wavelengths (clip to minimum response to avoid long tails, see MODIS band 5 as example.)
+- List min/max band for a ground target based on spectral sensor suite. 
 
 ## Data Sources
 ### Satellite sensors
@@ -91,6 +93,8 @@ pip list --format=freeze > requirements.txt
 ```
    - The build failed on `mkl*` dependencies, the solution was to remove them completely.
    - The build also failed on `setuptools=x.xx`, the solution was to remove the version requirement. 
+5) Setup [runtime.txt](runtime.txt) to define the deployed Python version. Notes:
+   - Must be compatible with [Heroku stack version](https://devcenter.heroku.com/articles/python-support#supported-runtimes). 
 6) Push to Heroku repo with `git push heroku main` 
     - If working from a local branch that is not `main`, use `git push heroku mybranch:main`
 

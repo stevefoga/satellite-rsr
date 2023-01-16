@@ -2,9 +2,7 @@ import os
 import json
 import base64
 
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import Dash, html, dcc 
 from dash.dependencies import Input, Output
 import plotly.express as px
 import plotly.graph_objects as go
@@ -24,7 +22,7 @@ Y_AXIS_LABEL = "Relative Spectral Response (W)"
 # example modified from https://dash.plotly.com/interactive-graphing
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
 
