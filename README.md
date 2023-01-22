@@ -12,7 +12,20 @@ to:
 3) allow for creation of publication-grade figures using a web UI.
 
 ## Demo
-This is currently deployed in Heroku: https://satellite-rsr.herokuapp.com/. 
+<img src="./assets/demo/full_app_2023jan22.png" width="625"/>
+_The application._
+
+<img src="./assets/demo/toggle_targets_2023jan22.png" width="625"/>
+_Toggle targets and bands by clicking the legend items._
+
+<img src="./assets/demo/compare_sensors_2023jan22.png" width="625"/>
+_Add multiple sensors (top menu items) to compare._
+
+<img src="./assets/demo/color_by_sensor_2023jan22.png" width="625"/>
+_Select 'Color by sensor' to color code by unique sensor, instead of unique band._
+
+<img src="./assets/demo/zoom_to_compare_2023jan22.png" width="625"/>
+_Zoom (hourglass icon) to compare targets and bands up close._
 
 ## Python environment
 Requires the following non-standard Python libraries:
@@ -59,7 +72,8 @@ conda install -c conda-forge numpy pandas dash
   - Cloud/shadow
 - Lookup table to prettify display text (e.g., `l8_oli` --> `L8 OLI`)
 - Clean up spectra wavelengths (clip to minimum response to avoid long tails, see MODIS band 5 as example.)
-- List min/max band for a ground target based on spectral sensor suite. 
+- List min/max band for a ground target based on spectral sensor suite.
+- Allow toggling of bands when 'Color by sensor' is enabled.
 
 ## Data Sources
 ### Satellite sensors
@@ -78,7 +92,14 @@ conda install -c conda-forge numpy pandas dash
 conda env export > environment.yml
 ```
 
+### Deploy locally
+1) Start local environment (conda, virtualenv, etc.)
+2) Run script `python plot_rsr.py`.
+3) Browse to webpage URL listed in console. 
+
 ### Deploy to Heroku
+This app was previously deployed for free in Heroku, however hosting costs are applied after so many hours of use.   
+
 Follow the [Plotly Deployment Guide](https://dash.plotly.com/deployment). Notes:
 1) Initial setup on macos (Apple Silicon, requires `homebrew` and `xcode-select`):
 ```
