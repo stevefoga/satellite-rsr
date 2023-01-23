@@ -13,19 +13,24 @@ to:
 
 ## Demo
 <img src="./assets/demo/full_app_2023jan22.png" width="625"/>
-_The application._
+*The application.* 
+
 
 <img src="./assets/demo/toggle_targets_2023jan22.png" width="625"/>
-_Toggle targets and bands by clicking the legend items._
+*Toggle targets and bands by clicking the legend items.* 
+
 
 <img src="./assets/demo/compare_sensors_2023jan22.png" width="625"/>
-_Add multiple sensors (top menu items) to compare._
+*Add multiple sensors (top menu items) to compare.* 
+
 
 <img src="./assets/demo/color_by_sensor_2023jan22.png" width="625"/>
-_Select 'Color by sensor' to color code by unique sensor, instead of unique band._
+*Select 'Color by sensor' to color code by unique sensor, instead of unique band.* 
+
 
 <img src="./assets/demo/zoom_to_compare_2023jan22.png" width="625"/>
-_Zoom (hourglass icon) to compare targets and bands up close._
+*Zoom (hourglass icon) to compare targets and bands up close.* 
+
 
 ## Python environment
 Requires the following non-standard Python libraries:
