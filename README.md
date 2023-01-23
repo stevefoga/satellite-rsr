@@ -12,25 +12,20 @@ to:
 3) allow for creation of publication-grade figures using a web UI.
 
 ## Demo
-<img src="./assets/demo/full_app_2023jan22.png" width="625"/>
 *The application.* 
+<img src="./assets/demo/full_app_2023jan22.png" width="625"/>
 
-
-<img src="./assets/demo/toggle_targets_2023jan22.png" width="625"/>
 *Toggle targets and bands by clicking the legend items.* 
+<img src="./assets/demo/toggle_targets_2023jan22.png" width="625"/>
 
-
+*Add multiple sensors (top menu items) to compare.*
 <img src="./assets/demo/compare_sensors_2023jan22.png" width="625"/>
-*Add multiple sensors (top menu items) to compare.* 
-
-
-<img src="./assets/demo/color_by_sensor_2023jan22.png" width="625"/>
+ 
 *Select 'Color by sensor' to color code by unique sensor, instead of unique band.* 
+<img src="./assets/demo/color_by_sensor_2023jan22.png" width="625"/>
 
-
-<img src="./assets/demo/zoom_to_compare_2023jan22.png" width="625"/>
 *Zoom (hourglass icon) to compare targets and bands up close.* 
-
+<img src="./assets/demo/zoom_to_compare_2023jan22.png" width="625"/>
 
 ## Python environment
 Requires the following non-standard Python libraries:
