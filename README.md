@@ -12,20 +12,13 @@ to:
 3) allow for creation of publication-grade figures using a web UI.
 
 ## Demo
-*The application.* 
-<img src="./assets/demo/full_app_2023jan22.png" width="625"/>
-
-*Toggle targets and bands by clicking the legend items.* 
-<img src="./assets/demo/toggle_targets_2023jan22.png" width="625"/>
-
-*Add multiple sensors (top menu items) to compare.*
-<img src="./assets/demo/compare_sensors_2023jan22.png" width="625"/>
- 
-*Select 'Color by sensor' to color code by unique sensor, instead of unique band.* 
-<img src="./assets/demo/color_by_sensor_2023jan22.png" width="625"/>
-
-*Zoom (hourglass icon) to compare targets and bands up close.* 
-<img src="./assets/demo/zoom_to_compare_2023jan22.png" width="625"/>
+| Screenshot | Description |
+|--- | :---: |
+|![Full application](./assets/demo/full_app_2023jan22.png) | The full application. |
+|![Toggle bands](./assets/demo/toggle_targets_2023jan22.png) | Toggle targets and bands by clicking the legend items. |
+|![Add sensors](./assets/demo/compare_sensors_2023jan22.png) | Add multiple sensors (top menu items) to compare. |
+|![Color by sensor](./assets/demo/color_by_sensor_2023jan22.png) | Select 'Color by sensor' to color code by unique sensor, instead of unique band. |
+|![Zoom](./assets/demo/zoom_to_compare_2023jan22.png) | Zoom (hourglass icon) to compare targets and bands up close. | 
 
 ## Python environment
 Requires the following non-standard Python libraries:
